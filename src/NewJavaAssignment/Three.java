@@ -1,17 +1,28 @@
 package NewJavaAssignment;
 
+import java.util.Scanner;
+
 public class Three {
 
 	public static void main(String[] args) {
-		int productPrice = 100;
+		int productPrice = 0;
+		System.out.println("Enter the price");
+        Scanner sc = new Scanner (System.in);
+         productPrice = sc.nextInt();
 		double defaultDiscount = 0.50;
+	
 		double discountprice = productPrice * defaultDiscount;
 		double priceAfterDefaultDiscount = productPrice - discountprice;
 		System.out.println("Price after default discount ="+priceAfterDefaultDiscount);
 		
 		//promo5 ,promo10, promo20 = promocodes
 		
-		String promoCode = "promo20"; 
+		String promoCode = ""; 
+		
+		System.out.println("Enter the promocode =");
+	
+
+		promoCode = sc.next();
 		
 		double promo5Discount = 0.05;
 		double promo5DiscountPrice = priceAfterDefaultDiscount * promo5Discount;
@@ -42,8 +53,11 @@ public class Three {
 		
 		System.out.println("Additional discount after applying PROMO 20 ="+promo20DiscountPrice);
 		System.out.println("The final price after applying PROMO20 ="+priceAfterPromo20Discount);
+
 		}
 
+		 sc.close();
 	}
-
+	
+       
 }
