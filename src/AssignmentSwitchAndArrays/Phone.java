@@ -15,11 +15,8 @@ public class Phone {
 		switch (brandNameOfPhone) {
 		case "samsung":
 
-			String[] samsungPhones = new String[4];
-			for (int index = 0; index < samsungPhones.length; index++) {
-				System.out.println("Enter the samsung phone name"); // S20,S21,Flip3,Fold3
-				samsungPhones[index] = sc.next();
-			}
+			String[] samsungPhones = {"S20","S21","Flip3","Fold3"};
+			
 			System.out.println(Arrays.toString(samsungPhones));
 			System.out.println("Enter one product of samsung");
 			String enterOneProduct = "";
@@ -44,16 +41,14 @@ public class Phone {
 
 			break;
 		case "google":
-
-			String[] googlePhones = new String[4];
-			for (int index = 0; index < googlePhones.length; index++) {
-				System.out.println("Enter the google phone name");
-				googlePhones[index] = sc.next();
-			}
+			
+			String[] googlePhones = {"GooglePixel6","GooglePixel6Pro","GooglePixelPro","GooglePixel5"};
+			
 			System.out.println(Arrays.toString(googlePhones));
-
-			System.out.println("Enter one product of google");
+			
 			String enterProduct = "";
+			System.out.println("Enter one product of google");
+			
 			enterProduct = sc.next();
 			boolean isProductInGoogleList = false;
 			System.out.println("Is the product in list");
@@ -64,6 +59,8 @@ public class Phone {
 					if (googlePhones[index].equals(enterProduct)) {
 						System.out.println("Product selected is " + enterProduct);
 						break;
+			
+					
 					}
 				}
 			}
@@ -74,11 +71,8 @@ public class Phone {
 
 		case "apple":
 
-			String[] applePhones = new String[4];
-			for (int index = 0; index < applePhones.length; index++) {
-				System.out.println("Enter the apple phone name");
-				applePhones[index] = sc.next();
-			}
+			String[] applePhones = {"Iphone12","Iphone12mini","Iphone11","Iphone11"};
+			
 			System.out.println(Arrays.toString(applePhones));
 
 			System.out.println("Enter one product name");
@@ -92,7 +86,7 @@ public class Phone {
 				if (isProductInAppleList == true) {
 					if (enterAppleProduct.equals(applePhones[index])) {
 						System.out.println("Product selected is " + enterAppleProduct);
-						break;
+					break;
 					}
 				}
 			}
