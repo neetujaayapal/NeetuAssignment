@@ -1,5 +1,6 @@
 package AssignmentSwitchAndArrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Calculator {
@@ -9,40 +10,54 @@ public class Calculator {
 		System.out.println("Enter the first number");
 		Scanner sc = new Scanner(System.in);
 		firstNumber = sc.nextInt();
-		int secondNumber = 20;
+		int secondNumber = 0;
 		System.out.println("Enter the second number");
 		secondNumber = sc.nextInt();
+		boolean needToContinue = false;
+    	
+    	
+        do {
+        	
+        	String operation = "";
+    		System.out.println("Enter the operator");
 
-		String operation = "";
-		System.out.println("Enter the operator");
-
-		operation = sc.next();
-
+    		operation = sc.next();
+            
 		switch (operation) {
-		case "addition":
-			int sum = firstNumber + secondNumber;
-			System.out.println("First Number+ Second Number =" + sum);
-
+		case "+":
+			
+			System.out.println(+firstNumber+ " + "+secondNumber+ " = " +(firstNumber+secondNumber) );
+			break;
+     
+		case "-":
+			
+			System.out.println(+firstNumber+ " - "+secondNumber+ " = " +(firstNumber-secondNumber) );
 			break;
 
-		case "substraction":
-			int substraction = firstNumber - secondNumber;
-			System.out.println("First Number - Second Number =" + substraction);
+		case "*":
+			
+			System.out.println(+firstNumber+ " * "+secondNumber+ " = " +(firstNumber*secondNumber) );
 			break;
-
-		case "multiply":
-			int multiply = firstNumber * secondNumber;
-			System.out.println("First Number * Second Number = " + multiply);
+			
+		case "/":
+			
+			System.out.println(+firstNumber+ " / "+secondNumber+ " = " +(firstNumber/secondNumber) );
 			break;
-		case "divide":
-			int divide = firstNumber / secondNumber;
-			System.out.println("First Number / Second Number = " + divide);
-			break;
+		
 		default:
-			System.out.println("Enter a valid operation");
+			
+			System.out.println("Enter any mathematical operation (+,-,*,/) to execute the program");
 		}
+		System.out.println("Do you want to continue");
+		needToContinue = sc.nextBoolean();
+        }
+        
+        while (needToContinue == true);
+        
+        
+  
 		sc.close();
-
+  
 	}
 
 }
