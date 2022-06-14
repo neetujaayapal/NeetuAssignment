@@ -1,11 +1,13 @@
 package Class;
 
+import java.util.Scanner;
+
 public class PhoneMain {
 
 	public static void main(String[] args) {
 
      Phone iphone = new Phone();
-     System.out.println(iphone.brand);
+  
      iphone.brand = "Iphone";
      iphone.name = "Iphone 13";
      iphone.bodyMaterial = "Aluminium";
@@ -23,12 +25,10 @@ public class PhoneMain {
      System.out.println("Screen size = " +iphone.screenSize+ "inches");
      System.out.println("Sim size = " +iphone.simSize);
      
-     
-     iphone.call();
-     iphone.messaging();
-     iphone.email();
-     iphone.browsingInternet();
-     iphone.playMusic();
+    
+     boolean hasCallConnected =iphone.callconnect();
+     System.out.println("Call connected ="+hasCallConnected);
+    
 	}
 
 }

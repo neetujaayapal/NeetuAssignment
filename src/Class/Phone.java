@@ -11,23 +11,26 @@ public class Phone {
 	double screenSize;
 	String bodyMaterial ;
 	String simSize;
+	boolean callAttended;
+	
 	
 	// Methods/functions of phone
 	
-	void call() {
-		System.out.println("Video call and audio call could be done");
-	}
-	void messaging() {
-		System.out.println("Text messages could be sent and received");
-	}
-	void email() {
-		System.out.println("Email can be accessed");
-	}
-	void browsingInternet() {
-		System.out.println("Internet can be browsed");
-	}
-	void playMusic() {
-		System.out.println("Music can be played");
+	boolean callconnect() {
+		System.out.println("Calling");
+
+		callAttended = true;
+		if (callAttended==true){
+			System.out.println("Call connected");
+			return true;
+		}
+	
+		
+		else  {
+			System.out.println("Call not connected");
+			return false;
+		}
+
 	}
 	
 	
