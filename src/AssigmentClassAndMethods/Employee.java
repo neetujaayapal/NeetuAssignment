@@ -8,6 +8,7 @@ public class Employee {
 	 last name and rate . Add a method which will calculate the weekly salary of the person by taking no 
 	 of hours worked as an input and multiplying it to hourly rate and print it.*/
 	 
+	//Method which takes input value and returns output value
 	String firstName;
 	String lastName;
 	int hourlyRate;
@@ -19,4 +20,5 @@ public class Employee {
 		return weekSalary;
 	}
 
+	
 }

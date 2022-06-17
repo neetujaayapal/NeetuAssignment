@@ -12,18 +12,19 @@ public class AmusementParkRide {
 		
 		
 		do {
-             boolean isEligibleForRide = personInPark.ableToRide();
-			System.out.println("Is this person allowed to ride =" +isEligibleForRide);
-			//System.out.println("Is this person allowed to ride = "+personInPark.ableToRide());
+			
+             //boolean isEligibleForRide = personInPark.ableToRide();
+			//System.out.println("Is this person allowed to ride =" +isEligibleForRide);
+			System.out.println("Is this person allowed to ride = "+personInPark.ableToRide());
 			
 		
-			if (isEligibleForRide==true) {
-				System.out.println("The person is allowed to board the ride");
-			}
+			// if (isEligibleForRide==true) {
+				//System.out.println("The person is allowed to board the ride");
+			//}
 			
-			else {
-				System.out.println("The person is not allowed to board the ride");
-			}
+			//else {
+			//	System.out.println("The person is not allowed to board the ride");
+			//}
 
 			System.out.println("Are there new any person ");
 			newPerson = sc.nextBoolean();

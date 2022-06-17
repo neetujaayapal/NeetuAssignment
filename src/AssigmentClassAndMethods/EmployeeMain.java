@@ -24,16 +24,19 @@ public class EmployeeMain {
 			System.out.println("Hourly Rate =" + emp.hourlyRate);
 
 			System.out.println("Enter the no. of hours worked");
-			int empHours = sc.nextInt();
+			int employeeHours = sc.nextInt();
 
-			int weekSalary = emp.salary(empHours);
-			System.out.println("Weekly salary ="  +weekSalary);
+			
+			int weekSalary = emp.salary(employeeHours);
+			System.out.println("Weekly salary =" + weekSalary);
+			// emp.salary(employeeHours);
+			// System.out.println("Weekly Salary = "+emp.salary(employeeHours));
 
 			System.out.println("Do you want to check other employee salary");
 			needToCheck = sc.nextBoolean();
 		}
 
-		while (needToCheck == true);
+		while (needToCheck);
 		sc.close();
 	}
 }
