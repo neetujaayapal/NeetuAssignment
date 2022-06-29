@@ -6,7 +6,7 @@ public class Person {
 	public long accountNumber;
 	double balance;
 	public String typeOfAccount;
-	int pin = 1234;
+	private int pin = 1234;
 
 	Person(String accHolderName, int number, int bal, String type) {
 		name = accHolderName;
@@ -15,4 +15,8 @@ public class Person {
 		typeOfAccount = type;
 	}
 
+	public int usePin() {
+		
+		return pin;
+	}
 }

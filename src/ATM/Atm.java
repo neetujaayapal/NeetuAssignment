@@ -17,17 +17,18 @@ public class Atm {
 
 	void checkPin() {
 
-		for (int i = 0; i < 3; i++) {
+	
+		for (int i = 1; i <=3; i++) {
 			System.out.println("Enter the pin");
 			enteredPin = sc.nextInt();
-			if (enteredPin == neetu.pin) {
+			if (enteredPin == neetu.usePin()) {
 				System.out.println("Enter the operation to perform");
 				break;
 			} else {
 				System.out.println("Incorrect Pin.Enter the pin again");
 			}
 
-			if (i == 2) {
+			if (i == 3) {
 				System.out.println("ATM Blocked");
 			}
 		}
@@ -60,7 +61,6 @@ public class Atm {
 				System.out.println("Insufficient balance");
 			}
 
-			
 			System.out.println("Current Balance = " + currentBalance);
 
 		} else {

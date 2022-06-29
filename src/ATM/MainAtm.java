@@ -14,11 +14,12 @@ public class MainAtm {
 		atm1.checkPin();
 		String operation;
 		operation = sc.next();
+		
 
 		if (operation.equals("withdraw")) {
 
 			atm1.withdrawCash(neetu);
-
+			
 		}
 
 		else if (operation.equals("deposit")) {
