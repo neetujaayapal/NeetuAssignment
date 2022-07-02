@@ -14,9 +14,10 @@ String name;
 	
 	double balance; 
 	
-	public void depositMoney(double amount) {
+	public double  depositMoney(double amount) {
 		
 		balance = balance +amount;
+		return balance;
 	}
 	
 	public boolean authorization(int pin, String account) {

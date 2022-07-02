@@ -34,6 +34,7 @@ public class BankMainClass {
 		} else {
 			System.out.println("Cannot access to chequing account");
 			
+			
 		}
 		
 		
@@ -41,7 +42,13 @@ public class BankMainClass {
 		
 		if (svngAccount.authorization(3456,"Saving") ) {
 			
-			System.out.println("Able to access saving account =" + svngAccount.authorization(3456, "Saving"));
+			System.out.println("Welcome to the Savings Home Page");
+			System.out.println("Enter the deposit amount");
+			double depositAmount = sc.nextDouble();
+			svngAccount.depositMoney(depositAmount);
+			System.out.println("Balance of saving account = "+svngAccount.balance);
+			
+			//System.out.println("Able to access saving account =" + svngAccount.authorization(3456, "Saving"));
 		} else {
 			System.out.println("Cannot access to savings account");
 		}
