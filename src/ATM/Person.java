@@ -6,16 +6,18 @@ public class Person {
 	public long accountNumber;
 	double balance;
 	public String typeOfAccount;
-	private int pin = 1234;
+	private int pin ;
 
-	Person(String accHolderName, int number, int bal, String type) {
+	Person(String accHolderName, int number, int bal, String type, int bankpin) {
 		name = accHolderName;
 		accountNumber = number;
 		balance = bal;
 		typeOfAccount = type;
+		pin = bankpin;
 	}
+	
 
-	public int usePin() {
+	int usePin() {
 		
 		return pin;
 	}

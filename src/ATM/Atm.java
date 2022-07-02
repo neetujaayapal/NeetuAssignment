@@ -5,68 +5,77 @@ import java.util.Scanner;
 public class Atm {
 
 	final double cashLimit;
-	private int enteredPin;
+	int enteredPin;
 
 	public Atm() {
-		cashLimit = 3000;
+		cashLimit = 5000;
 	}
 
 	Scanner sc = new Scanner(System.in);
 
-	Person neetu = new Person("Neetu", 123456, 5000, "Chequing");
 
-	void checkPin() {
+	void checkPin(Person person) {
+		
 
-	
-		for (int i = 1; i <=3; i++) {
-			System.out.println("Enter the pin");
+		for (int i = 1; i <= 3; i++) {
+			System.out.println("Enter the ATM pin");
 			enteredPin = sc.nextInt();
-			if (enteredPin == neetu.usePin()) {
-				System.out.println("Enter the operation to perform");
+			if (enteredPin == person.usePin() ) {
 				break;
-			} else {
-				System.out.println("Incorrect Pin.Enter the pin again");
 			}
+			
+			else if (enteredPin !=person.usePin())  {
+				System.out.println("Incorrect Pin");
+			}
+
 
 			if (i == 3) {
 				System.out.println("ATM Blocked");
+				
 			}
+			
+
 		}
 
 	}
+	
 
-	double depositCash(Person neetu) {
 
-		System.out.println("Enter the amount to deposit.");
+	double depositCash(Person person) {
+		System.out.println("Enter the amount to deposit");
 		double deposit = sc.nextDouble();
-		System.out.println("Insert cash");
-
-		double balanceAfterdeposit = neetu.balance + deposit;
-		System.out.println("Current Balance = " + balanceAfterdeposit);
-
-		return balanceAfterdeposit;
-
+		person.balance = person.balance + deposit;
+		System.out.println("cash deposited");
+       System.out.println("Balance = "+person.balance);
+		return person.balance;
 	}
 
-	double withdrawCash(Person neetu) {
+	double withdrawCash(Person person) {
 
 		System.out.println("Enter the amount to withdraw");
 		double withDrawAmount = sc.nextDouble();
-		double currentBalance = neetu.balance - withDrawAmount;
-		if (withDrawAmount <= cashLimit) {
-			if (withDrawAmount <= neetu.balance) {
-				System.out.println("Please collect the cash");
 
+		if (withDrawAmount <= cashLimit) {
+			if (withDrawAmount <= person.balance) {
+				System.out.println("Please collect the cash");
+				person.balance = person.balance - withDrawAmount;
+				 System.out.println("Balance = "+person.balance);
 			} else {
 				System.out.println("Insufficient balance");
 			}
 
-			System.out.println("Current Balance = " + currentBalance);
-
 		} else {
-			System.out.println("Amount is greater than daily transaction limit");
+			System.out.println("Amount is greater than daily cash limit");
+
 		}
-		return currentBalance;
+		return person.balance;
 	}
+
+	double balance(Person person) {
+
+		return person.balance;
+	}
+
+	
 
 }
