@@ -12,195 +12,69 @@ public class MainAtm {
 
 		Person neetu = new Person("Neetu", 123456, 5000, "Chequing", 1234);
 
-		Person teenu = new Person("Teenu", 243456, 8000, "Chequing", 2345);
-
-		Person john = new Person("John", 234567, 6000, "Chequing", 2012);
-
-		
 		System.out.println("Enter the card number");
 		System.out.println("Neetu = Card no-987654 ");
-		System.out.println("Teenu = Card no-432156 ");
-		System.out.println("John = Card no-765432 ");
+
 		int cardNo = sc.nextInt();
-		
-		switch (cardNo) {
+		boolean isPinCorrect = false;
 
-		case 987654:
-			
-			atm1.checkPin(neetu);
-			if (atm1.enteredPin != neetu.usePin()) 
-				System.out.println("Check with bank");
+		if (cardNo == 987654) {
 
-			else 
-			
-			do {
+			isPinCorrect = atm1.checkPin(neetu);
 
-				int choice;
-				System.out.println("Enter the neetu choice to perform");
-				System.out.println("1 : Withdraw");
-				System.out.println("2 : Deposit");
+			if (isPinCorrect) {
 
-				choice = sc.nextInt();
+				do {
 
-				switch (choice) {
-				case 1:
-					atm1.checkPin(neetu);
-				if (atm1.enteredPin != neetu.usePin()) 
-					System.out.println("Check with bank");
+					int choice;
+					System.out.println("Enter the choice to perform");
+					System.out.println("1 : Withdraw");
+					System.out.println("2 : Deposit");
 
-				else 
-						atm1.withdrawCash(neetu);
-						atm1.balance(neetu);			
-					break;
+					choice = sc.nextInt();
 
-				case 2:
-					atm1.checkPin(neetu);
-					if (atm1.enteredPin != neetu.usePin()) 
-						System.out.println("Check with bank");
+					switch (choice) {
+					case 1:
+						isPinCorrect = atm1.checkPin(neetu);
+						if (isPinCorrect == false) {
+							System.out.println("Maximum Attempts done");
+						} else {
+							atm1.withdrawCash(neetu);
+							atm1.balance(neetu);
+						}
+						break;
 
-					 else
-					
-						atm1.depositCash(neetu);
-						atm1.balance(neetu);
-					
-					break;
+					case 2:
+						isPinCorrect = atm1.checkPin(neetu);
+						if (isPinCorrect == false) {
+							System.out.println("Maximum Attempts done");
+						} else {
 
-				default:
-					System.out.println("Invalid choice");
+							atm1.depositCash(neetu);
+							atm1.balance(neetu);
+						}
 
-				}
-				if (atm1.enteredPin != neetu.usePin()) {
-					System.out.println("Ended");
-				} else
-					System.out.println("Do you want to continue transaction");
-				needToContinue = sc.nextBoolean();
+						break;
 
-			} while (needToContinue == true);
-
-			System.out.println("Transaction ended.");
-
-			break;
-
-		case 432156:
-			atm1.checkPin(teenu);
-			if (atm1.enteredPin != teenu.usePin())
-				System.out.println("Ended");
-			else
-
-			do {
-
-				System.out.println("Enter the choice to perform");
-				System.out.println("1 : Withdraw");
-				System.out.println("2 : Deposit");
-				int choice;
-				choice = sc.nextInt();
-
-				switch (choice) {
-				case 1:
-					atm1.checkPin(teenu);
-					if (atm1.enteredPin != teenu.usePin()) {
-						System.out.println("Check with bank");
-
-					} else {
-						atm1.withdrawCash(teenu);
-						atm1.balance(teenu);
+					default:
+						System.out.println("Invalid choice");
+						break;
 					}
-					break;
 
-				case 2:
-					atm1.checkPin(teenu);
-
-					if (atm1.enteredPin != teenu.usePin()) {
+					if (isPinCorrect == false) {
 						System.out.println("Check with bank");
+					} else
+						System.out.println("Do you want to continue transaction");
+					needToContinue = sc.nextBoolean();
+				} while (needToContinue == true);
 
-					} else {
-						atm1.depositCash(teenu);
-						atm1.balance(teenu);
-						
-					}
-					break;
-
-				default:
-					System.out.println("Invalid choice");
-
-				}
-				if (atm1.enteredPin != teenu.usePin()) {
-					System.out.println("Ended");
-				} else
-
-					System.out.println("Do you want to continue transaction");
-				needToContinue = sc.nextBoolean();
-
+				System.out.println("Transaction ended.");
 			}
 
-			while (needToContinue == true);
-
-			System.out.println("Transaction ended.Please take your card");
-
-			break;
-
-		case 765432:
-			atm1.checkPin(john);
-			if (atm1.enteredPin != john.usePin())
-				System.out.println("Ended");
-			else
-
-			do {
-				int choice;
-				System.out.println("Enter the choice to perform");
-				System.out.println("1 : Withdraw");
-				System.out.println("2 : Deposit");
-
-				choice = sc.nextInt();
-
-				switch (choice) {
-				case 1:
-					atm1.checkPin(john);
-					if (atm1.enteredPin != john.usePin()) {
-						System.out.println("Check with bank");
-
-					} else {
-						atm1.withdrawCash(john);
-						atm1.balance(john);
-					}
-					break;
-
-				case 2:
-					atm1.checkPin(john);
-
-					if (atm1.enteredPin != john.usePin()) {
-						System.out.println("Check with bank");
-
-					} else {
-						atm1.depositCash(john);
-						atm1.balance(john);
-					}
-					break;
-
-				default:
-					System.out.println("Invalid choice");
-
-				}
-				if (atm1.enteredPin != john.usePin()) {
-					System.out.println("Ended");
-				} else
-
-					System.out.println("Do you want to continue transaction");
-				needToContinue = sc.nextBoolean();
-
-			}
-
-			while (needToContinue == true);
-
-			System.out.println("Transaction ended.Please take your card");
-
-			break;
-
-		default:
-
+		} else {
 			System.out.println("Invalid card number.Enter a valid card number");
-
 		}
+		// }
 
 		sc.close();
 	}
