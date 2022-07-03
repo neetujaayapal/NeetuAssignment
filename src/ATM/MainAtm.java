@@ -18,8 +18,10 @@ public class MainAtm {
 		int cardNo = sc.nextInt();
 		boolean isPinCorrect = false;
 
-		if (cardNo == 987654) {
+		switch (cardNo) {
 
+		
+		case 987654:
 			isPinCorrect = atm1.checkPin(neetu);
 
 			if (isPinCorrect) {
@@ -67,11 +69,11 @@ public class MainAtm {
 						System.out.println("Do you want to continue transaction");
 					needToContinue = sc.nextBoolean();
 				} while (needToContinue == true);
-
-				System.out.println("Transaction ended.");
 			}
+				System.out.println("Transaction ended.");
+			break;
 
-		} else {
+		default: 
 			System.out.println("Invalid card number.Enter a valid card number");
 		}
 		// }
