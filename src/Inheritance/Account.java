@@ -14,6 +14,35 @@ String name;
 	
 	double balance; 
 	
+	int pin;
+	
+	String typeOfAccount;
+	
+	Account(int pin){
+	pin = pin;
+		
+	}
+	
+	
+	public String getTypeOfAccount() {
+		return typeOfAccount;
+	}
+
+	public void setTypeOfAccount(String typeOfAccount) {
+		this.typeOfAccount = typeOfAccount;
+	}
+
+	
+	
+	
+	public int getPin() {
+		return pin;
+	}
+
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+
 	public double  depositMoney(double amount) {
 		
 		balance = balance +amount;
