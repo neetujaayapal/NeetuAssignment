@@ -2,14 +2,14 @@ package Employee;
 
 public class ContractualEmployee extends Employee {
 
-	int extraHours;
+	int hours; // total hours worked
 	private int payPerHour;
 
-	ContractualEmployee(String firstN, String secondN, int sin, double wage, int hours, int perHourPay) {
+	ContractualEmployee(String firstN, String secondN, int sin, double wage, int hour, int perHourPay) {
 		super(firstN, secondN, sin, wage);
 		// TODO Auto-generated constructor stub
 
-		extraHours = hours;
+		hours = hour;
 		payPerHour = perHourPay;
 
 	}
@@ -26,17 +26,20 @@ public class ContractualEmployee extends Employee {
 
 	@Override
 
-	public double calculatePay() {
+	public double calculatePay() { // biweekly pay
+      // 
+		if (hours>40) {
 
-		if (extraHours > 0) {
-
-			return biweeklySalary + (extraHours * (payPerHour * 1.5));
+			// if they work more than 40 hours in a week. they will get 1.5 times their hourly wage for each extra hour they worked.
+			return ((40 * payPerHour) + ((hours-40) * (payPerHour * 1.5)))*2;
 
 		} else {
 
-			return biweeklySalary;
+			return (hours * payPerHour)*2 ;
 
 		}
+		
+	
 
 	}
 

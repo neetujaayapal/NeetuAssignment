@@ -7,5 +7,14 @@ public class PermanentEmployee extends Employee {
 		super(firstN, secondN, sin, wage);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	
+	public double calculatePay() { // biweekly pay
+
+		return salary / 2; //
+	}
+
+
 
 }

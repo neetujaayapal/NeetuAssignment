@@ -2,25 +2,27 @@ package Employee;
 
 public class CommisionBasedEmployee extends Employee {
 
-	int sales;
-	double PerCommission;
+	
+	int salesBiweekly;
+	double percentageCommission;
 
 	CommisionBasedEmployee(String firstN, String secondN, int sin, double wage, int sale, double com) {
 		super(firstN, secondN, sin, wage);
 		// TODO Auto-generated constructor stub
 
-		sales = sale;
-		PerCommission = com;
+		
+		salesBiweekly = sale;
+		percentageCommission = com;
 	}
 
 	@Override
-	public double calculatePay() {
+	public double calculatePay() {// pay per month
 
-		if (sales > 0) {
+		if (salesBiweekly > 0) { 
 
-			return biweeklySalary + (PerCommission * sales);
+			return salary/2+ (percentageCommission * salesBiweekly);
 		} else {
-			return biweeklySalary;
+			return salary/2;
 		}
 
 	}

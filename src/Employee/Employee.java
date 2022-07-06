@@ -5,14 +5,14 @@ public class Employee {
 	String firstName;
 	String lastName;
 	private int sinnumber;
-	protected double biweeklySalary;
+	protected double salary;
 
 	Employee(String firstN, String secondN, int sin, double wage) {
 		super();
 		firstName = firstN;
 		lastName = secondN;
 		sinnumber = sin;
-		biweeklySalary = wage;
+		salary = wage;   // monthly salary
 
 	}
 
@@ -21,22 +21,24 @@ public class Employee {
 		return sinnumber;
 	}
 
-	public double getBiweeklySalary() {
-		return biweeklySalary;
+	
+	public double getSalary() {
+		return salary;
 	}
 
-	public void setBiweeklySalary(double biweeklySalary) {
-
-		if (biweeklySalary >= 0)
-			this.biweeklySalary = biweeklySalary;
+	public void setSalary(double salary) {
+		if (salary > 0)
+			this.salary = salary;
 		else {
-			System.out.println("Salary cannot be changed");
+			System.out.println("Monthly salary cannot be zero");
 		}
+			
 	}
+	
 
-	public double calculatePay() {
+	public double calculatePay() { // monthly salary
 
-		return biweeklySalary;
+		return salary;
 	}
-
 }
+	
