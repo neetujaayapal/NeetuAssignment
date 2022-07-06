@@ -25,9 +25,9 @@ public class Employee {
 		return biweeklySalary;
 	}
 
-	public void setBiweeklySalary(double biweeklySalary,boolean isHrAllowed) {
+	public void setBiweeklySalary(double biweeklySalary) {
 
-		if (isHrAllowed && biweeklySalary >= 0)
+		if (biweeklySalary >= 0)
 			this.biweeklySalary = biweeklySalary;
 		else {
 			System.out.println("Salary cannot be changed");

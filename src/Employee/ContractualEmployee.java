@@ -19,7 +19,9 @@ public class ContractualEmployee extends Employee {
 	}
 
 	public void setPayPerHour(int payPerHour) {
+
 		this.payPerHour = payPerHour;
+
 	}
 
 	@Override

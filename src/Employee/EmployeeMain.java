@@ -8,9 +8,7 @@ public class EmployeeMain {
 		PermanentEmployee emp1 = new PermanentEmployee("Neetu", "Jayapalan", 23456, 3000);
 		System.out.println("Biweekly Pay of Neetu =" + emp1.calculatePay());
 
-		// emp1.setBiweeklySalary(3000,true);
-		// System.out.println(emp1.getBiweeklySalary());
-
+		
 		PermanentEmployee emp2 = new PermanentEmployee("John", "Paul", 2123456, 4000);
 		System.out.println("Salary of John =" + emp2.calculatePay());
 
@@ -22,7 +20,8 @@ public class EmployeeMain {
 
 		ContractualEmployee emp5 = new ContractualEmployee("Teena", "Jack", 112122132, 2900, 0, 25);
 		System.out.println("Pay of Teena = " + emp5.calculatePay());
-
+		
+	
 		ContractualEmployee emp6 = new ContractualEmployee("Tim", "Jo", 232323, 2000, 20, 22);
 		System.out.println("Pay of Tim =" + emp6.calculatePay());
 
