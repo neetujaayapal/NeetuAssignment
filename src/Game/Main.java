@@ -6,9 +6,12 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+import ReadAFile.MovieGame;
+
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
+		System.out.println("Movie game!!!!!!!!");
 		MovieGame game1 = new MovieGame();
 		File file = new File(
 				"C:\\Users\\neetu\\Desktop\\Pivot Academy\\Week 11_July 9_July 10\\assignment\\movies.txt");
@@ -23,21 +26,38 @@ public class Main {
 
 			}
 		}
+		System.out.println("Array of movies");
 		System.out.println(Arrays.toString(listOfMovies));
 
-		Random rand = new Random();
-	    int index = rand.nextInt(listOfMovies.length);
-		System.out.println(listOfMovies[index]);
-     
-		String name = listOfMovies[index];
+		// call method to pick random movie
+		String name = game1.pickMovie(listOfMovies);
+		// printed the movie name
+		System.out.println("Random Picked Movie!!!!");
+		System.out.println("Name =" + name);
+		// call method to check the no. of letters in the movie with space.
+		System.out.println("No. of letters of movie =" + game1.checkLetters(name));
 
-		boolean hasGuessed=false;
+		String nameWithoutSpace = name.replace(" ", "");
 
-		hasGuessed = game1.checkGuessMovie(name);
-		
-		System.out.println("The letters guessed is "+hasGuessed);
-	
-		
+		char[] nameArray = name.toCharArray();
+
+		// char[] nameArrayWithouSpace = nameWithoutSpace.toCharArray();
+
+		int letterCount = nameWithoutSpace.length();
+
+		// call method to convert names to underscores
+		String hiddenName = game1.convertLetterToUnderscore(name);
+
+		char[] hiddenArray = hiddenName.toCharArray();
+
+		boolean guessedletter = false;
+
+		// call method to check whether the letter is present in the letter and if so
+		// convert '_' to letter.
+		guessedletter = game1.checkGuessLetter(hiddenArray, nameArray, letterCount, name);
+
+		System.out.println("The guessed letter is " + guessedletter);
+
 		sc.close();
 	}
 }

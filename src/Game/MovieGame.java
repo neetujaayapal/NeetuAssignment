@@ -6,19 +6,32 @@ import java.util.Scanner;
 
 public class MovieGame {
 
-	Scanner sc = new Scanner(System.in);
+	// method to pick random movie
+	public String pickMovie(String[] listOfMovies) {
 
-	public boolean checkGuessMovie(String name) {
+		Random rand = new Random();
+		int index = rand.nextInt(listOfMovies.length);
+		return listOfMovies[index];
 
-		System.out.println("No. of letters of movie with space =" + name.length());
-		String nameWithoutSpace = name.replace(" ", "");
-		char[] nameArray = nameWithoutSpace.toCharArray();
-		int letterCount = nameWithoutSpace.length();
-		System.out.println("No. of letters of movie without space =" + letterCount);
-		String hiddenName = name.replaceAll("[a-zA-Z]", "_");
-		System.out.println(hiddenName);
+	}
 
-		char[] hiddenArray = hiddenName.toCharArray();
+	// method to check the letters in the movie
+	public int checkLetters(String name) {
+
+		return name.length();
+
+	}
+
+	// method to convert letters to underscore
+	public String convertLetterToUnderscore(String name) {
+
+		return name.replaceAll("[a-zA-Z]", "_");
+	}
+
+	// method to check the whether guessletter is present in the letter or not.
+	public boolean checkGuessLetter(char[] hiddenArray, char[] nameArray, int letterCount, String name) {
+
+		Scanner input = new Scanner(System.in);
 
 		int wrongAttempts = 0;
 
@@ -28,7 +41,7 @@ public class MovieGame {
 
 			System.out.println("Enter the guess letter");
 
-			String guessLetter = sc.next();
+			String guessLetter = input.next();
 
 			if (name.contains(guessLetter)) {
 
@@ -39,21 +52,22 @@ public class MovieGame {
 					System.out.println("Index =" + index1);
 
 					hiddenArray[index1] = name.charAt(index1);
+
 					letterCount--;
 				}
 
-				System.out.println(hiddenArray);
+				System.out.println(hiddenArray);// (continue until hiddenArray == nameArray)
 
 			}
 
-			else {
+			else {// (hiddenArray == nameArray)
 
-				System.out.println("You have guessed Wrong Letter  ");
+				System.out.println("You have guessed Wrong Letter  " + (wrongAttempts + 1) + "times");
 				wrongAttempts++;
 
 			}
-
 		}
+
 		if (letterCount == 0) {
 
 			System.out.println("You got the movie");
@@ -63,7 +77,6 @@ public class MovieGame {
 			System.out.println("All attempts tried. Game Over");
 		}
 		return false;
-
 	}
 
 }
