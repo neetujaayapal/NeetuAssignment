@@ -35,35 +35,55 @@ public class MovieGame {
 
 		int wrongAttempts = 0;
 
+		String wrongLetters = "";
+
+		String rightLetters = "";
+
 		while (hiddenArray != nameArray && letterCount > 0 && wrongAttempts < 10)
 
 		{
 
-			System.out.println("Enter the guess letter");
+			System.out.println("Enter any guess letter");
 
 			String guessLetter = input.next();
 
-			if (name.contains(guessLetter)) {
+			if (name.contains(guessLetter) && letterCount > 0) {
 
-				System.out.println("This letter is in the movie");
+				if (rightLetters.contains(guessLetter)) {
+					System.out.println("This letter was already tried");
+				} else {
+					System.out.println("This letter is in the movie");
 
-				for (int index1 = name.indexOf(guessLetter); index1 >= 0; index1 = name.indexOf(guessLetter,
-						index1 + 1)) {
-					System.out.println("Index =" + index1);
+					for (int index1 = name.indexOf(guessLetter); index1 >= 0; index1 = name.indexOf(guessLetter,
+							index1 + 1)) {
+						System.out.println("Index =" + index1);
 
-					hiddenArray[index1] = name.charAt(index1);
+						hiddenArray[index1] = name.charAt(index1);
 
-					letterCount--;
+						letterCount--;
+
+						rightLetters += " " + guessLetter;
+					}
 				}
 
 				System.out.println(hiddenArray);// (continue until hiddenArray == nameArray)
 
 			}
 
-			else {// (hiddenArray == nameArray)
+			else {
 
-				System.out.println("You have guessed Wrong Letter  " + (wrongAttempts + 1) + "times");
-				wrongAttempts++;
+				if (wrongLetters.contains(guessLetter)) {
+
+					System.out.println("Letter already tried");
+				}
+
+				else { // (hiddenArray == nameArray)
+
+					System.out.println("You have guessed Wrong Letter" + (wrongAttempts + 1) + "times");
+					wrongAttempts++;
+					wrongLetters += " " + guessLetter;
+
+				}
 
 			}
 		}

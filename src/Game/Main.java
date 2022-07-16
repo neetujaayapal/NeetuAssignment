@@ -6,13 +6,13 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import ReadAFile.MovieGame;
+import ReadAFile.Movie;
 
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.println("Movie game!!!!!!!!");
-		MovieGame game1 = new MovieGame();
+		Movie game1 = new Movie();
 		File file = new File(
 				"C:\\Users\\neetu\\Desktop\\Pivot Academy\\Week 11_July 9_July 10\\assignment\\movies.txt");
 		Scanner sc = new Scanner(file);
@@ -26,16 +26,16 @@ public class Main {
 
 			}
 		}
-		System.out.println("Array of movies");
-		System.out.println(Arrays.toString(listOfMovies));
+		// System.out.println("Array of movies");
+		// System.out.println(Arrays.toString(listOfMovies));
 
 		// call method to pick random movie
 		String name = game1.pickMovie(listOfMovies);
 		// printed the movie name
-		System.out.println("Random Picked Movie!!!!");
+		// System.out.println("Random Picked Movie!!!!");
 		System.out.println("Name =" + name);
 		// call method to check the no. of letters in the movie with space.
-		System.out.println("No. of letters of movie =" + game1.checkLetters(name));
+		// System.out.println("No. of letters of movie =" + game1.checkLetters(name));
 
 		String nameWithoutSpace = name.replace(" ", "");
 
