@@ -30,10 +30,11 @@ public class Main {
 		// System.out.println(Arrays.toString(listOfMovies));
 
 		// call method to pick random movie
+
 		String name = game1.pickMovie(listOfMovies);
 		// printed the movie name
 		// System.out.println("Random Picked Movie!!!!");
-		System.out.println("Name =" + name);
+		//System.out.println("Name =" + name);
 		// call method to check the no. of letters in the movie with space.
 		// System.out.println("No. of letters of movie =" + game1.checkLetters(name));
 

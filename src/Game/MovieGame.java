@@ -62,7 +62,7 @@ public class MovieGame {
 
 						letterCount--;
 
-						rightLetters += " " + guessLetter;
+						rightLetters = rightLetters + guessLetter;
 					}
 				}
 
@@ -81,7 +81,7 @@ public class MovieGame {
 
 					System.out.println("You have guessed Wrong Letter" + (wrongAttempts + 1) + "times");
 					wrongAttempts++;
-					wrongLetters += " " + guessLetter;
+					wrongLetters = wrongLetters + guessLetter;
 
 				}
 
