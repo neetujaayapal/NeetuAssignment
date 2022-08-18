@@ -32,17 +32,6 @@ public class EnumMain {
 
 			System.out.println(days);
 		}
-		System.out.println("Printing the reference number");
-		// ordinal()
-
-		System.out.println(day1.MONDAY.ordinal());
-
-		// valueof()
-
-		System.out.println(day1.valueOf("MONDAY"));
-
-		// toString()
-		System.out.println(day1.MONDAY.toString());
 
 	}
 }
