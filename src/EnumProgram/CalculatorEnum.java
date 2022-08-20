@@ -6,7 +6,7 @@ public enum CalculatorEnum {
 
 	final String symbol;
 
-	CalculatorEnum(String symbol) {
+	private CalculatorEnum(String symbol) {
 
 		this.symbol = symbol;
 

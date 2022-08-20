@@ -7,7 +7,7 @@ public enum Phone {
 	final String product;
 	final int price;
 
-	Phone(String product, int price) {
+	private Phone(String product, int price) {
 
 		this.product = product;
 		this.price = price;
